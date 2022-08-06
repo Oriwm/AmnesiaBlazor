@@ -1,5 +1,5 @@
 using Microsoft.JSInterop;
-namespace Amnesia.Interop;
+namespace Amnesia.Engine.External;
 
 public class JavaScript
 {

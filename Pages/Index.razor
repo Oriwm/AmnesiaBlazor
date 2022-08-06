@@ -1,23 +1,15 @@
 ﻿@page "/"
 @implements IDisposable
 @inject IJSRuntime JSRT
+@inherits Amnesia.Engine.BlazorBase;
 
 <PageTitle>Amnesia</PageTitle>
 
-<h1>Amnesia - .net wasm game engine</h1>
-
 @code {
-
-    public static Amnesia.Interop.JavaScript? IJS;
+    public static Amnesia.Engine.External.JavaScript? IJS;
     protected override void OnInitialized()
     {
         IJS = new(JSRT); // Init JSRuntime object
-    }
-
-    [JSInvokable]
-    public static async Task Init()
-    {
-        await Main.Run();
     }
 
     public void Dispose() => IJS?.Dispose();

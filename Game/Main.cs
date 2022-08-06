@@ -1,33 +1,11 @@
-namespace Amnesia;
+
+namespace Amnesia.Game;
 static class Main
 {
     public static async Task Run()
     {
-        Console.WriteLine("Pain initialization...");
-        await Task.Delay(2000);
-        Console.WriteLine("Pain RUN...");
+        await Task.Delay(10);
 
-        Bob myBob = new Bob("Enginer");
-        myBob.Say();
-
-        await Task.Delay(2000);
-        Console.WriteLine("Pain close...");
-
-        Pages.Index.IJS?.Void("Alert", "Hello, its Amnesia!");
-    }
-}
-
-class Bob
-{
-    public string Job;
-
-    public Bob(string job)
-    {
-        Job = job;
-    }
-
-    public void Say()
-    {
-        Console.WriteLine("My job is " + Job);
+        Amnesia.Engine.External.JS.RecolorCanvas(1,0,0);
     }
 }
